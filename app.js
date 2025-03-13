@@ -9,11 +9,14 @@ function agregarAmigo() {
     if (!nombreAmigo) {
     alert("Por favor, inserte un nombre.");
     return;
-}
-amigo.push(nombreAmigo)
+} else if (amigo.includes(nombreAmigo)) {
+    alert ("El nombre ya está en la lista");
+} else {
+amigo.push(nombreAmigo);
 inputAmigo.value = "";
 inputAmigo.focus();
 renderizarAmigos();
+}
 };
 
 // Actualiza la lista de amigos de forma dinámica y no fija en el html
